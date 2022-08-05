@@ -1,0 +1,3506 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report MustUnderstand="df" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns:df="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition/defaultfontfamily">
+  <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
+  <AutoRefresh>0</AutoRefresh>
+  <DataSources>
+    <DataSource Name="PANEL">
+      <DataSourceReference>DS_PANEL</DataSourceReference>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>f476245b-a5d7-42bf-881c-0d0c53f8d24a</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="AWS_PANEL">
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=AW-DB03;Initial Catalog=PANEL</ConnectString>
+      </ConnectionProperties>
+      <rd:SecurityType>None</rd:SecurityType>
+      <rd:DataSourceID>3b01b932-ee7a-4ee2-8ab8-cba124e365bc</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="DimensionSample">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@sample_num">
+            <Value>=Parameters!sample_num.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@jobid">
+            <Value>=Parameters!jobid.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@d_endoflastmonth">
+            <Value>=Parameters!d_endoflastmonth.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@month">
+            <Value>=Parameters!month.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@close_date">
+            <Value>=Parameters!close_date.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@length">
+            <Value>=Parameters!length.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@amount">
+            <Value>=Parameters!amount.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@txt_close">
+            <Value>=Parameters!txt_close.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@d_startoffieldwork">
+            <Value>=Parameters!d_startoffieldwork.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@s_profile_variable1">
+            <Value>=Parameters!s_profile_variable1.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@s_profile_variable2">
+            <Value>=Parameters!s_profile_variable2.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@s_profile_variable3">
+            <Value>=Parameters!s_profile_variable3.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@s_profile_variable4">
+            <Value>=Parameters!s_profile_variable4.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@s_variable_values1">
+            <Value>=join(Parameters!s_variable_values1.Value,",")</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@s_variable_values2">
+            <Value>=join(Parameters!s_variable_values2.Value,",")</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@s_variable_values3">
+            <Value>=join(Parameters!s_variable_values3.Value,",")</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@s_variable_values4">
+            <Value>=join(Parameters!s_variable_values4.Value,",")</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@panel_status">
+            <Value>=join(Parameters!panel_status.Value,",")</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@s_perc_or_count">
+            <Value>=Parameters!s_perc_or_count.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum_rowcounts">
+            <Value>=Parameters!stratum_rowcounts.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@stratum1">
+            <Value>=Parameters!stratum1.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum2">
+            <Value>=Parameters!stratum2.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum3">
+            <Value>=Parameters!stratum3.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum4">
+            <Value>=Parameters!stratum4.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum5">
+            <Value>=Parameters!stratum5.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum6">
+            <Value>=Parameters!stratum6.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum7">
+            <Value>=Parameters!stratum7.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum8">
+            <Value>=Parameters!stratum8.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum9">
+            <Value>=Parameters!stratum9.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum10">
+            <Value>=Parameters!stratum10.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum11">
+            <Value>=Parameters!stratum11.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@stratum12">
+            <Value>=Parameters!stratum12.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@exclusion">
+            <Value>=Parameters!exclusion.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@filtered_rowcount">
+            <Value>=Parameters!show_filtered_records.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@tot_rowcount_stratum">
+            <Value>=Parameters!stratum_rowcounts.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@overall_perc_from_each_stratum">
+            <Value>=Parameters!overall_perc_from_each_stratum.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>EXECUTE [dbo].prepare_panel_dimension_sample @sample_num, @jobid,@d_endoflastmonth ,@month ,@close_date  ,@length ,@amount ,@txt_close,@d_startoffieldwork, @s_profile_variable1,@s_profile_variable2,@s_profile_variable3,@s_profile_variable4, @s_variable_values1,@s_variable_values2, @s_variable_values3,@s_variable_values4
+,@panel_status
+,@s_perc_or_count 
+,@stratum_rowcounts
+,@stratum1 
+,@stratum2 
+,@stratum3 
+,@stratum4 
+,@stratum5 
+,@stratum6 
+,@stratum7 
+,@stratum8 
+,@stratum9 
+,@stratum10 
+,@stratum11 
+,@stratum12 
+,@exclusion
+,@filtered_rowcount
+,@tot_rowcount_stratum
+,@overall_perc_from_each_stratum
+--,@exclusion_jobid</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <Fields>
+        <Field Name="Id">
+          <DataField>Id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="phoneNumber">
+          <DataField>phoneNumber</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="telnum">
+          <DataField>telnum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="altnum1">
+          <DataField>altnum1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="title">
+          <DataField>title</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="firstname">
+          <DataField>firstname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="surname">
+          <DataField>surname</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="c_addr1">
+          <DataField>c_addr1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="c_addr2">
+          <DataField>c_addr2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="c_suburb">
+          <DataField>c_suburb</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="c_state">
+          <DataField>c_state</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="c_postcode">
+          <DataField>c_postcode</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="sampleType">
+          <DataField>sampleType</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_gender">
+          <DataField>p_gender</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="population">
+          <DataField>population</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="populationTxt">
+          <DataField>populationTxt</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="batch">
+          <DataField>batch</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="timezone">
+          <DataField>timezone</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="mesflg">
+          <DataField>mesflg</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="onlinestatus">
+          <DataField>onlinestatus</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="email">
+          <DataField>email</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="email_outcome">
+          <DataField>email_outcome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="enrolmentdate">
+          <DataField>enrolmentdate</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="paypalemail">
+          <DataField>paypalemail</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_recruitment">
+          <DataField>p_recruitment</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="status">
+          <DataField>status</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="market">
+          <DataField>market</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="marketorder">
+          <DataField>marketorder</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DPA_CATIInUse">
+          <DataField>DPA_CATIInUse</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="panel_notes">
+          <DataField>panel_notes</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="email_refusal">
+          <DataField>email_refusal</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="address_refusal">
+          <DataField>address_refusal</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="phone_refusal">
+          <DataField>phone_refusal</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="prev_wave_outcome">
+          <DataField>prev_wave_outcome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="queue">
+          <DataField>queue</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_state">
+          <DataField>p_state</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prev_wave_refusal">
+          <DataField>prev_wave_refusal</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="calloutcome">
+          <DataField>calloutcome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="detailedcalloutcome">
+          <DataField>detailedcalloutcome</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="partial_flag">
+          <DataField>partial_flag</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="invited">
+          <DataField>invited</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="QTERM3">
+          <DataField>QTERM3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="incentive_type">
+          <DataField>incentive_type</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="preferred_incentive">
+          <DataField>preferred_incentive</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="preferred_charity">
+          <DataField>preferred_charity</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_atsi">
+          <DataField>p_atsi</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="expcon">
+          <DataField>expcon</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="EXPGRP">
+          <DataField>EXPGRP</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="month">
+          <DataField>month</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="close_date">
+          <DataField>close_date</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="length">
+          <DataField>length</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="amount">
+          <DataField>amount</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="txt_close">
+          <DataField>txt_close</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_age">
+          <DataField>p_age</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_age_group">
+          <DataField>p_age_group</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AM_flag_counter">
+          <DataField>AM_flag_counter</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ENTRYMODE">
+          <DataField>ENTRYMODE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="FINISHMODE">
+          <DataField>FINISHMODE</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="EC1_flag">
+          <DataField>EC1_flag</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="TransferDate">
+          <DataField>TransferDate</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="SOURCE">
+          <DataField>SOURCE</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="preferred_day">
+          <DataField>preferred_day</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="preferred_time">
+          <DataField>preferred_time</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AppCallCentreTime">
+          <DataField>AppCallCentreTime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="AppointmentTime">
+          <DataField>AppointmentTime</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="cob_group">
+          <DataField>cob_group</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="state">
+          <DataField>state</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="p_education">
+          <DataField>p_education</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="ORDER">
+          <DataField>ORDER</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="W28_flag">
+          <DataField>W28_flag</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="anu_id">
+          <DataField>anu_id</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="status_4_5_6">
+          <Value>=IIf(Fields!status.Value = "4" or Fields!status.Value = "5" or Fields!status.Value = "6",1,0)</Value>
+        </Field>
+        <Field Name="status_2">
+          <Value>=IIf(Fields!status.Value = "2",1,0)</Value>
+        </Field>
+        <Field Name="mesflg_1">
+          <Value>=IIf(Fields!mesflg.Value = "1",1,0)</Value>
+        </Field>
+        <Field Name="DPA_CATIInUse_Y">
+          <Value>=IIf(Fields!DPA_CATIInUse.Value = "Y",1,0)</Value>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="Panel_Wave_Config_Info">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@jobid">
+            <Value>=Parameters!jobid.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@sample_num">
+            <Value>=Parameters!sample_num.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>usp_get_panel_wave_config_info</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="job_id">
+          <DataField>job_id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="wave_id">
+          <DataField>wave_id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="sample_num">
+          <DataField>sample_num</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="wave_invite">
+          <DataField>wave_invite</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="shortlink_prefix">
+          <DataField>shortlink_prefix</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="incentive_samples_done">
+          <DataField>incentive_samples_done</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+        <Field Name="working_dir">
+          <DataField>working_dir</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="sav_fincal_file_path">
+          <DataField>sav_fincal_file_path</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="fincal_done">
+          <DataField>fincal_done</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="attrition_done">
+          <DataField>attrition_done</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="endoflastmonth">
+          <DataField>endoflastmonth</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="month">
+          <DataField>month</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="close_date">
+          <DataField>close_date</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="length">
+          <DataField>length</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="txt_close">
+          <DataField>txt_close</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="amount">
+          <DataField>amount</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="start_of_fieldwork">
+          <DataField>start_of_fieldwork</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="profile_variable1">
+          <DataField>profile_variable1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="profile_variable2">
+          <DataField>profile_variable2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="profile_variable3">
+          <DataField>profile_variable3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="profile_variable4">
+          <DataField>profile_variable4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="variable_values1">
+          <DataField>variable_values1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="variable_values2">
+          <DataField>variable_values2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="variable_values3">
+          <DataField>variable_values3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="variable_values4">
+          <DataField>variable_values4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="panel_status">
+          <DataField>panel_status</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prev_job_id">
+          <DataField>prev_job_id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prev_job_id_desc">
+          <DataField>prev_job_id_desc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="profile_columns">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <CommandText>SELECT        column_name, ROW_NUMBER() OVER(ORDER BY column_name) rownumber
+FROM            panel_profile_columns
+union all
+SELECT 'NULL' column_name, 0
+order by 2
+/*
+SELECT        column_name, ROW_NUMBER() OVER(ORDER BY column_name) rownumber
+FROM            panel_profile_columns
+union all SELECT    var_fin column_name, '9' + cast(ROW_NUMBER() OVER(ORDER BY var_fin) as varchar(500)) rownumber
+FROM        (select distinct  var_fin from    [PANEL].[dbo].[Panel_Attrition_Wave_Columns])t
+union all
+SELECT 'NULL' column_name, 0
+order by 2
+*/</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="column_name">
+          <DataField>column_name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="rownumber">
+          <DataField>rownumber</DataField>
+          <rd:TypeName>System.Int64</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="column_values1">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@column_name">
+            <Value>=Parameters!s_profile_variable1.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>exec dbo.[usp_get_profile_column_values] @column_name</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="column_values">
+          <DataField>column_values</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="column_values2">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@column_name">
+            <Value>=Parameters!s_profile_variable2.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>exec dbo.[usp_get_profile_column_values] @column_name</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="column_values">
+          <DataField>column_values</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="column_values3">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@column_name">
+            <Value>=Parameters!s_profile_variable3.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>exec dbo.[usp_get_profile_column_values] @column_name</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="column_values">
+          <DataField>column_values</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="column_values4">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@column_name">
+            <Value>=Parameters!s_profile_variable4.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>exec dbo.[usp_get_profile_column_values] @column_name</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="column_values">
+          <DataField>column_values</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="default_select_column_values1">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@InputString">
+            <Value>=Parameters!tmp_var_val1.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@Delimiter">
+            <Value>=","</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT * from [dbo].[Split] (@InputString, @Delimiter)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Item">
+          <DataField>Item</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="default_select_column_values2">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@InputString">
+            <Value>=Parameters!tmp_var_val2.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Delimiter">
+            <Value>=","</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT * from [dbo].[Split] (@InputString, @Delimiter)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Item">
+          <DataField>Item</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="default_select_column_values3">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@InputString">
+            <Value>=Parameters!tmp_var_val3.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Delimiter">
+            <Value>=","</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT * from [dbo].[Split] (@InputString, @Delimiter)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Item">
+          <DataField>Item</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="default_select_column_values4">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@InputString">
+            <Value>=Parameters!tmp_var_val4.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@Delimiter">
+            <Value>=","</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>SELECT * from [dbo].[Split] (@InputString, @Delimiter)</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="Item">
+          <DataField>Item</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="panel_wave_stratum_prn_log">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@jobid">
+            <Value>=Parameters!jobid.Value</Value>
+            <rd:UserDefined>true</rd:UserDefined>
+          </QueryParameter>
+          <QueryParameter Name="@sample_num">
+            <Value>=Parameters!sample_num.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>execute usp_get_panel_wave_stratum_prn_log @jobid, @sample_num</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="job_id">
+          <DataField>job_id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="wave_id">
+          <DataField>wave_id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prn_stratum_2019">
+          <DataField>prn_stratum_2019</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="selected_row_count">
+          <DataField>selected_row_count</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="prn_stratum_2019_desc">
+          <DataField>prn_stratum_2019_desc</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prn_start">
+          <DataField>prn_start</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="prn_end">
+          <DataField>prn_end</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="stratum_row_count">
+          <DataField>stratum_row_count</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="percentage">
+          <DataField>percentage</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="All_Projects">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@jobid">
+            <Value>=Parameters!jobid.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>select replace(job_id,'src','') as job_id,wave_id, concat(replace(job_id,'src',''),' (W',wave_id,')') as job_id_wave  from panel_wave_config_info where ord &lt;&gt;0 and job_id &lt;&gt;@jobid order by ord desc</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="job_id">
+          <DataField>job_id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="wave_id">
+          <DataField>wave_id</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="job_id_wave">
+          <DataField>job_id_wave</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="profile_filtered_count">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@jobid">
+            <Value>=Parameters!jobid.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@sample_num">
+            <Value>=Parameters!sample_num.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@panel_status">
+            <Value>=join(Parameters!panel_status.Value,",")</Value>
+          </QueryParameter>
+          <QueryParameter Name="@s_profile_variable1">
+            <Value>=Parameters!s_profile_variable1.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@s_profile_variable2">
+            <Value>=Parameters!s_profile_variable2.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@s_profile_variable3">
+            <Value>=Parameters!s_profile_variable3.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@s_profile_variable4">
+            <Value>=Parameters!s_variable_values1.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@s_variable_values1">
+            <Value>=join(Parameters!s_variable_values1.Value,",")</Value>
+          </QueryParameter>
+          <QueryParameter Name="@s_variable_values2">
+            <Value>=join(Parameters!s_variable_values2.Value,",")</Value>
+          </QueryParameter>
+          <QueryParameter Name="@s_variable_values3">
+            <Value>=join(Parameters!s_variable_values3.Value,",")</Value>
+          </QueryParameter>
+          <QueryParameter Name="@s_variable_values4">
+            <Value>=join(Parameters!s_variable_values4.Value,",")</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandType>StoredProcedure</CommandType>
+        <CommandText>usp_get_profile_filtered_counts</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="counter">
+          <DataField>counter</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="aft_exclusion">
+          <DataField>aft_exclusion</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="filtered_rowcount">
+          <DataField>filtered_rowcount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="aft_exclusion_rowcount">
+          <DataField>aft_exclusion_rowcount</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_rowcount_stratum">
+          <DataField>tot_rowcount_stratum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+    <DataSet Name="percentage_calculate">
+      <Query>
+        <DataSourceName>PANEL</DataSourceName>
+        <QueryParameters>
+          <QueryParameter Name="@overall_rowcount">
+            <Value>=Parameters!stratum_rowcounts.Value</Value>
+          </QueryParameter>
+          <QueryParameter Name="@filtered_row_count">
+            <Value>=Parameters!show_filtered_records.Value</Value>
+          </QueryParameter>
+        </QueryParameters>
+        <CommandText>execute calculate_percent @overall_rowcount, @filtered_row_count </CommandText>
+      </Query>
+      <Fields>
+        <Field Name="perc_required_from_each_stratum">
+          <DataField>perc_required_from_each_stratum</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum1">
+          <DataField>tot_stratum1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum2">
+          <DataField>tot_stratum2</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum3">
+          <DataField>tot_stratum3</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum4">
+          <DataField>tot_stratum4</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum5">
+          <DataField>tot_stratum5</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum6">
+          <DataField>tot_stratum6</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum7">
+          <DataField>tot_stratum7</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum8">
+          <DataField>tot_stratum8</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum9">
+          <DataField>tot_stratum9</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum10">
+          <DataField>tot_stratum10</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum11">
+          <DataField>tot_stratum11</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="tot_stratum12">
+          <DataField>tot_stratum12</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum1">
+          <DataField>stratum1</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum2">
+          <DataField>stratum2</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum3">
+          <DataField>stratum3</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum4">
+          <DataField>stratum4</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum5">
+          <DataField>stratum5</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum6">
+          <DataField>stratum6</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum7">
+          <DataField>stratum7</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum8">
+          <DataField>stratum8</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum9">
+          <DataField>stratum9</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum10">
+          <DataField>stratum10</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum11">
+          <DataField>stratum11</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="stratum12">
+          <DataField>stratum12</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="selected_total_from_all_stratum">
+          <DataField>selected_total_from_all_stratum</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+      </Fields>
+    </DataSet>
+  </DataSets>
+  <ReportSections>
+    <ReportSection>
+      <Body>
+        <ReportItems>
+          <Rectangle Name="Rectangle1">
+            <ReportItems>
+              <Textbox Name="Textbox75">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>= "Summary Report: " &amp; Parameters!jobid.Value &amp; "(" &amp; Parameters!sample_num.Value &amp; ") - " &amp; "Report Generated at: " &amp; Globals!ExecutionTime</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>White</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox75</rd:DefaultName>
+                <Height>0.25in</Height>
+                <Width>14.26042in</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>#466c95</BackgroundColor>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Tablix Name="Tablix2">
+                <TablixBody>
+                  <TablixColumns>
+                    <TablixColumn>
+                      <Width>1.16667in</Width>
+                    </TablixColumn>
+                    <TablixColumn>
+                      <Width>6.71875in</Width>
+                    </TablixColumn>
+                    <TablixColumn>
+                      <Width>1in</Width>
+                    </TablixColumn>
+                    <TablixColumn>
+                      <Width>1in</Width>
+                    </TablixColumn>
+                    <TablixColumn>
+                      <Width>1in</Width>
+                    </TablixColumn>
+                    <TablixColumn>
+                      <Width>1.63542in</Width>
+                    </TablixColumn>
+                    <TablixColumn>
+                      <Width>1.73958in</Width>
+                    </TablixColumn>
+                  </TablixColumns>
+                  <TablixRows>
+                    <TablixRow>
+                      <Height>0.25in</Height>
+                      <TablixCells>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox79">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>prn stratum 2019</Value>
+                                      <Style>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox79</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox81">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>prn stratum 2019 desc</Value>
+                                      <Style>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox81</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox89">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>required</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox89</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox98">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>selected</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox98</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox91">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>percentage(%)</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox91</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox94">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>prn start</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox94</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox96">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>prn end</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox96</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                      </TablixCells>
+                    </TablixRow>
+                    <TablixRow>
+                      <Height>0.25in</Height>
+                      <TablixCells>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="prn_stratum_2019">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!prn_stratum_2019.Value</Value>
+                                      <Style />
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>prn_stratum_2019</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="prn_stratum_2019_desc">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!prn_stratum_2019_desc.Value</Value>
+                                      <Style />
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>prn_stratum_2019_desc</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="stratum_row_count">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!stratum_row_count.Value</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>stratum_row_count</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="selected_row_count">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!selected_row_count.Value</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>selected_row_count</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="percentage">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=round(Fields!percentage.Value,2)</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <Color>=IIf(Fields!percentage.Value &gt; 100,"Red","Black")</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>percentage</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="prn_start">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!prn_start.Value</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>prn_start</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="prn_end">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Fields!prn_end.Value</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>prn_end</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                      </TablixCells>
+                    </TablixRow>
+                    <TablixRow>
+                      <Height>0.25in</Height>
+                      <TablixCells>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox93">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox93</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox95">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox95</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox115">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Sum(Fields!stratum_row_count.Value)</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox115</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="selected_row_count1">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value>=Sum(Fields!selected_row_count.Value)</Value>
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>White</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>selected_row_count1</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox103">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                        <Color>=IIf(Fields!percentage.Value &gt; 100,"Red","Black")</Color>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox103</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox111">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox111</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                        <TablixCell>
+                          <CellContents>
+                            <Textbox Name="Textbox113">
+                              <CanGrow>true</CanGrow>
+                              <KeepTogether>true</KeepTogether>
+                              <Paragraphs>
+                                <Paragraph>
+                                  <TextRuns>
+                                    <TextRun>
+                                      <Value />
+                                      <Style>
+                                        <FontFamily>Arial</FontFamily>
+                                        <FontWeight>Bold</FontWeight>
+                                      </Style>
+                                    </TextRun>
+                                  </TextRuns>
+                                  <Style />
+                                </Paragraph>
+                              </Paragraphs>
+                              <rd:DefaultName>Textbox113</rd:DefaultName>
+                              <Style>
+                                <Border>
+                                  <Color>LightGrey</Color>
+                                  <Style>Solid</Style>
+                                </Border>
+                                <BackgroundColor>#466c95</BackgroundColor>
+                                <PaddingLeft>2pt</PaddingLeft>
+                                <PaddingRight>2pt</PaddingRight>
+                                <PaddingTop>2pt</PaddingTop>
+                                <PaddingBottom>2pt</PaddingBottom>
+                              </Style>
+                            </Textbox>
+                          </CellContents>
+                        </TablixCell>
+                      </TablixCells>
+                    </TablixRow>
+                  </TablixRows>
+                </TablixBody>
+                <TablixColumnHierarchy>
+                  <TablixMembers>
+                    <TablixMember />
+                    <TablixMember />
+                    <TablixMember>
+                      <Visibility>
+                        <Hidden>true</Hidden>
+                      </Visibility>
+                    </TablixMember>
+                    <TablixMember />
+                    <TablixMember />
+                    <TablixMember />
+                    <TablixMember />
+                  </TablixMembers>
+                </TablixColumnHierarchy>
+                <TablixRowHierarchy>
+                  <TablixMembers>
+                    <TablixMember>
+                      <KeepWithGroup>After</KeepWithGroup>
+                    </TablixMember>
+                    <TablixMember>
+                      <Group Name="Details" />
+                    </TablixMember>
+                    <TablixMember>
+                      <KeepWithGroup>Before</KeepWithGroup>
+                    </TablixMember>
+                  </TablixMembers>
+                </TablixRowHierarchy>
+                <DataSetName>panel_wave_stratum_prn_log</DataSetName>
+                <SortExpressions>
+                  <SortExpression>
+                    <Value>=Fields!prn_stratum_2019.Value</Value>
+                  </SortExpression>
+                </SortExpressions>
+                <Top>3.53in</Top>
+                <Height>0.75in</Height>
+                <Width>14.26042in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                </Style>
+              </Tablix>
+              <Textbox Name="Textbox104">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Profile Variable 1 - " &amp; Parameters!s_profile_variable1.Value &amp; ": " &amp; join(Parameters!s_variable_values1.Value,",")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox104</rd:DefaultName>
+                <Top>0.38417in</Top>
+                <Height>0.25in</Height>
+                <Width>14.125in</Width>
+                <ZIndex>2</ZIndex>
+                <Visibility>
+                  <Hidden>=iif(Parameters!s_profile_variable1.Value &lt;&gt; "" and Parameters!s_profile_variable1.Value &lt;&gt; "NULL",FALSE,TRUE)</Hidden>
+                </Visibility>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox105">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Profile Variable 2 - " &amp; Parameters!s_profile_variable2.Value &amp; ": " &amp; join(Parameters!s_variable_values2.Value, ",")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox104</rd:DefaultName>
+                <Top>0.7025in</Top>
+                <Height>0.25in</Height>
+                <Width>14.125in</Width>
+                <ZIndex>3</ZIndex>
+                <Visibility>
+                  <Hidden>=iif(Parameters!s_profile_variable2.Value &lt;&gt; "" and Parameters!s_profile_variable2.Value &lt;&gt; "NULL",FALSE,TRUE)</Hidden>
+                </Visibility>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox106">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Profile Variable 3 - " &amp; Parameters!s_profile_variable3.Value &amp; ": " &amp; join(Parameters!s_variable_values3.Value, ",")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox104</rd:DefaultName>
+                <Top>1.04333in</Top>
+                <Height>0.25in</Height>
+                <Width>14.125in</Width>
+                <ZIndex>4</ZIndex>
+                <Visibility>
+                  <Hidden>=iif(Parameters!s_profile_variable3.Value &lt;&gt; "" and Parameters!s_profile_variable3.Value &lt;&gt; "NULL",FALSE,TRUE)</Hidden>
+                </Visibility>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox107">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Profile Variable 4 - " &amp; Parameters!s_profile_variable4.Value &amp; ": " &amp; join(Parameters!s_variable_values4.Value, ",")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox104</rd:DefaultName>
+                <Top>1.36166in</Top>
+                <Height>0.25in</Height>
+                <Width>14.125in</Width>
+                <ZIndex>5</ZIndex>
+                <Visibility>
+                  <Hidden>=iif(Parameters!s_profile_variable4.Value &lt;&gt; "" and Parameters!s_profile_variable4.Value &lt;&gt; "NULL",FALSE,TRUE)</Hidden>
+                </Visibility>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox108">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Stratum Selection is based on - " &amp; Parameters!s_perc_or_count.Value</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox104</rd:DefaultName>
+                <Top>1.68861in</Top>
+                <Height>0.25in</Height>
+                <Width>14.125in</Width>
+                <ZIndex>6</ZIndex>
+                <Visibility>
+                  <Hidden>=iif(Parameters!s_profile_variable4.Value &lt;&gt; "" and Parameters!s_profile_variable4.Value &lt;&gt; "NULL", False, True)</Hidden>
+                </Visibility>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox109">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Over all Percentage for each Stratum is : " &amp; Parameters!overall_perc_from_each_stratum.Value &amp; " " 
+&amp; "Stratum selection is as follows " &amp; vbcrlf 
+&amp; "Startum 1  : " &amp; Parameters!stratum1.Value &amp; vbcrlf 
+&amp; "Startum 2  : " &amp; Parameters!stratum2.Value &amp; vbcrlf 
+&amp; "Startum 3  : " &amp; Parameters!stratum3.Value &amp; vbcrlf 
+&amp; "Startum 4  : " &amp; Parameters!stratum4.Value &amp; vbcrlf 
+&amp; "Startum 5  : " &amp; Parameters!stratum5.Value &amp; vbcrlf 
+&amp; "Startum 6  : " &amp; Parameters!stratum6.Value &amp; vbcrlf 
+&amp; "Startum 7  : " &amp; Parameters!stratum7.Value &amp; vbcrlf 
+&amp; "Startum 8  : " &amp; Parameters!stratum8.Value &amp; vbcrlf 
+&amp; "Startum 9  : " &amp; Parameters!stratum9.Value &amp; vbcrlf 
+&amp; "Startum 10 : " &amp; Parameters!stratum10.Value &amp; vbcrlf 
+&amp; "Startum 11 : " &amp; Parameters!stratum11.Value &amp; vbcrlf 
+&amp; "Startum 12 : " &amp; Parameters!stratum12.Value</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox104</rd:DefaultName>
+                <Top>2.06361in</Top>
+                <Height>1.39695in</Height>
+                <Width>14.125in</Width>
+                <ZIndex>7</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <PageBreak>
+              <BreakLocation>End</BreakLocation>
+            </PageBreak>
+            <PageName>Summary Report</PageName>
+            <KeepTogether>true</KeepTogether>
+            <Height>4.36681in</Height>
+            <Width>14.26042in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Rectangle Name="Dimension_Sample_Counts">
+            <ReportItems>
+              <Textbox Name="Textbox71">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Total records include opt out panels (2019 refreshed panels) -&gt; " &amp; CountRows("DimensionSample")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox71</rd:DefaultName>
+                <Top>0.375in</Top>
+                <Height>0.25in</Height>
+                <Width>11.62625in</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox76">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Dimension Report Counts"</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                          <Color>White</Color>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox75</rd:DefaultName>
+                <Height>0.25in</Height>
+                <Width>14.26042in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BackgroundColor>#466c95</BackgroundColor>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox72">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Inactive panels move to UNUSABLE / Refused queue (Status = 4,5,6) -&gt; " &amp; Sum(Fields!status_4_5_6.Value, "DimensionSample")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox71</rd:DefaultName>
+                <Top>0.74403in</Top>
+                <Height>0.25in</Height>
+                <Width>11.62625in</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox78">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Away panels moved to UNUSABLE / NotAvailable queue (Status = 2) -&gt; " &amp;Sum(Fields!status_2.Value, "DimensionSample")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox78</rd:DefaultName>
+                <Top>1.12674in</Top>
+                <Height>0.25in</Height>
+                <Width>11.62625in</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox83">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="Total panels with mobile in V6 SMS sample, mesflg set to 1 (mesflg = 1) -&gt; " &amp; Sum(Fields!mesflg_1.Value, "DimensionSample")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox83</rd:DefaultName>
+                <Top>1.52257in</Top>
+                <Height>0.25in</Height>
+                <Width>11.62625in</Width>
+                <ZIndex>4</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="Textbox84">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>="DPA_CATIInUse set to Y for active panels with phone number (DPA_CATIInUse = Y ) -&gt; " &amp; Sum(Fields!DPA_CATIInUse_Y.Value, "DimensionSample")</Value>
+                        <Style />
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>Textbox84</rd:DefaultName>
+                <Top>1.89757in</Top>
+                <Height>0.25in</Height>
+                <Width>11.62625in</Width>
+                <ZIndex>5</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <PageName>Dimension Sample Counts</PageName>
+            <KeepTogether>true</KeepTogether>
+            <Top>4.51958in</Top>
+            <Height>2.18924in</Height>
+            <Width>14.26042in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+        </ReportItems>
+        <Height>6.70882in</Height>
+        <Style />
+      </Body>
+      <Width>108.89583in</Width>
+      <Page>
+        <LeftMargin>1in</LeftMargin>
+        <RightMargin>1in</RightMargin>
+        <TopMargin>1in</TopMargin>
+        <BottomMargin>1in</BottomMargin>
+        <Style />
+      </Page>
+    </ReportSection>
+  </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="jobid">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Current Job Id</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="sample_num">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>S1</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Sample</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>S1</Value>
+            <Label>Sample 1</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>S2</Value>
+            <Label>Sample 2</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>S3</Value>
+            <Label>Sample 3</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>S4</Value>
+            <Label>Sample 4</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>S5</Value>
+            <Label>Sample 5</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>S6</Value>
+            <Label>Sample 6</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="prev_job_no">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>prev_job_id_desc</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Previous Job Id</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>prev_job_id_desc</ValueField>
+          <LabelField>prev_job_id_desc</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="panel_status">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>1</Value>
+        </Values>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Panel Status</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>1</Value>
+            <Label>Active</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>2</Value>
+            <Label>Inactive</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tmp_var_val1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>variable_values1</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tmp_var_val1</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>variable_values1</ValueField>
+          <LabelField>variable_values1</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="tmp_var_val2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>variable_values2</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tmp_var_val2</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>variable_values2</ValueField>
+          <LabelField>variable_values2</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="tmp_var_val3">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>variable_values3</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tmp_var_val3</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>variable_values3</ValueField>
+          <LabelField>variable_values3</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="tmp_var_val4">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>variable_values4</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tmp_var_val4</Prompt>
+      <Hidden>true</Hidden>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>variable_values4</ValueField>
+          <LabelField>variable_values4</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="d_endoflastmonth">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>endoflastmonth</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>End of Last Month</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="month">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>month</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Month</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="close_date">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>close_date</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Close Date</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="length">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>length</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Length</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="amount">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>amount</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Amount</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="txt_close">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>txt_close</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>txt_close</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="d_startoffieldwork">
+      <DataType>DateTime</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>start_of_fieldwork</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Start of Fieldwork</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="s_profile_variable1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>profile_variable1</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Profile Variable 1</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>profile_columns</DataSetName>
+          <ValueField>column_name</ValueField>
+          <LabelField>column_name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="s_variable_values1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>default_select_column_values1</DataSetName>
+          <ValueField>Item</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Variable Values 1</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>column_values1</DataSetName>
+          <ValueField>column_values</ValueField>
+          <LabelField>column_values</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="s_profile_variable2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>profile_variable2</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Profile Variable 2</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>profile_columns</DataSetName>
+          <ValueField>column_name</ValueField>
+          <LabelField>column_name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="s_variable_values2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>default_select_column_values2</DataSetName>
+          <ValueField>Item</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Variable Values 2</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>column_values2</DataSetName>
+          <ValueField>column_values</ValueField>
+          <LabelField>column_values</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="s_profile_variable3">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>profile_variable3</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Profile Variable 3</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>profile_columns</DataSetName>
+          <ValueField>column_name</ValueField>
+          <LabelField>column_name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="s_variable_values3">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>default_select_column_values3</DataSetName>
+          <ValueField>Item</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Variable Values 3</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>column_values3</DataSetName>
+          <ValueField>column_values</ValueField>
+          <LabelField>column_values</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="s_profile_variable4">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>Panel_Wave_Config_Info</DataSetName>
+          <ValueField>profile_variable4</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Profile Variable 4</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>profile_columns</DataSetName>
+          <ValueField>column_name</ValueField>
+          <LabelField>column_name</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="s_variable_values4">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>default_select_column_values4</DataSetName>
+          <ValueField>Item</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Variable Values 4</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>column_values4</DataSetName>
+          <ValueField>column_values</ValueField>
+          <LabelField>column_values</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <MultiValue>true</MultiValue>
+    </ReportParameter>
+    <ReportParameter Name="show_filtered_records">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>profile_filtered_count</DataSetName>
+          <ValueField>counter</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Filtered Records Count</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>profile_filtered_count</DataSetName>
+          <ValueField>counter</ValueField>
+          <LabelField>counter</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="record_count_after_exclusion">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>profile_filtered_count</DataSetName>
+          <ValueField>aft_exclusion</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Filtered Records Count after exclusion</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>profile_filtered_count</DataSetName>
+          <ValueField>aft_exclusion</ValueField>
+          <LabelField>aft_exclusion</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="s_perc_or_count">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>overallrowcount</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Stratum selection based on</Prompt>
+      <ValidValues>
+        <ParameterValues>
+          <ParameterValue>
+            <Value>overallrowcount</Value>
+            <Label>overall row count</Label>
+          </ParameterValue>
+        </ParameterValues>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="stratum_rowcounts">
+      <DataType>String</DataType>
+      <Prompt>Row counts required from all Stratums</Prompt>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum1</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum1</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum1</ValueField>
+          <LabelField>tot_stratum1</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum2</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum2</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum2</ValueField>
+          <LabelField>tot_stratum2</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum3">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum3</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum3</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum3</ValueField>
+          <LabelField>tot_stratum3</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum4">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum4</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum4</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum4</ValueField>
+          <LabelField>tot_stratum4</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum5">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum5</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum5</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum5</ValueField>
+          <LabelField>tot_stratum5</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum6">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum6</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum6</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum6</ValueField>
+          <LabelField>tot_stratum6</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum7">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum7</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum7</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum7</ValueField>
+          <LabelField>tot_stratum7</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum8">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum8</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum8</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum8</ValueField>
+          <LabelField>tot_stratum8</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum9">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum9</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum9</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum9</ValueField>
+          <LabelField>tot_stratum9</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum10">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum10</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum10</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum10</ValueField>
+          <LabelField>tot_stratum10</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum11">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum11</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum11</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum11</ValueField>
+          <LabelField>tot_stratum11</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="tot_stratum12">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum12</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>tot_stratum12</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>tot_stratum12</ValueField>
+          <LabelField>tot_stratum12</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum1">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum1</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum1</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum1</ValueField>
+          <LabelField>stratum1</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum2">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum2</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum2</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum2</ValueField>
+          <LabelField>stratum2</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum3">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum3</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum3</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum3</ValueField>
+          <LabelField>stratum3</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum4">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum4</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum4</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum4</ValueField>
+          <LabelField>stratum4</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum5">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum5</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum5</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum5</ValueField>
+          <LabelField>stratum5</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum6">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum6</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum6</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum6</ValueField>
+          <LabelField>stratum6</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum7">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum7</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum7</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum7</ValueField>
+          <LabelField>stratum7</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum8">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum8</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum8</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum8</ValueField>
+          <LabelField>stratum8</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum9">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum9</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum9</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum9</ValueField>
+          <LabelField>stratum9</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum10">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum10</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum10</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum10</ValueField>
+          <LabelField>stratum10</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum11">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum11</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum11</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum11</ValueField>
+          <LabelField>stratum11</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="stratum12">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum12</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>selected_stratum12</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>stratum12</ValueField>
+          <LabelField>stratum12</LabelField>
+        </DataSetReference>
+      </ValidValues>
+      <UsedInQuery>True</UsedInQuery>
+    </ReportParameter>
+    <ReportParameter Name="overall_perc_from_each_stratum">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>perc_required_from_each_stratum</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>overall perc from each stratum</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>perc_required_from_each_stratum</ValueField>
+          <LabelField>perc_required_from_each_stratum</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="total_from_all_stratum">
+      <DataType>String</DataType>
+      <DefaultValue>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>selected_total_from_all_stratum</ValueField>
+        </DataSetReference>
+      </DefaultValue>
+      <Prompt>Total selected from all stratum</Prompt>
+      <ValidValues>
+        <DataSetReference>
+          <DataSetName>percentage_calculate</DataSetName>
+          <ValueField>selected_total_from_all_stratum</ValueField>
+          <LabelField>selected_total_from_all_stratum</LabelField>
+        </DataSetReference>
+      </ValidValues>
+    </ReportParameter>
+    <ReportParameter Name="exclusion">
+      <DataType>Boolean</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>false</Value>
+        </Values>
+      </DefaultValue>
+      <Prompt>Exclusion</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+  </ReportParameters>
+  <ReportParametersLayout>
+    <GridLayoutDefinition>
+      <NumberOfColumns>4</NumberOfColumns>
+      <NumberOfRows>14</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>tmp_var_val1</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>tmp_var_val2</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>tmp_var_val3</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>1</RowIndex>
+          <ParameterName>tmp_var_val4</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>sample_num</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>prev_job_no</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>jobid</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>panel_status</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>d_endoflastmonth</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>month</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>close_date</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>2</RowIndex>
+          <ParameterName>length</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>amount</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>txt_close</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>d_startoffieldwork</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>3</RowIndex>
+          <ParameterName>s_profile_variable1</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>s_variable_values1</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>s_profile_variable2</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>s_variable_values2</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>4</RowIndex>
+          <ParameterName>s_profile_variable3</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>s_variable_values3</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>s_profile_variable4</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>s_variable_values4</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>5</RowIndex>
+          <ParameterName>show_filtered_records</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>6</RowIndex>
+          <ParameterName>s_perc_or_count</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>6</RowIndex>
+          <ParameterName>stratum_rowcounts</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>13</RowIndex>
+          <ParameterName>overall_perc_from_each_stratum</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>10</RowIndex>
+          <ParameterName>stratum1</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>10</RowIndex>
+          <ParameterName>stratum2</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>10</RowIndex>
+          <ParameterName>stratum3</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>10</RowIndex>
+          <ParameterName>stratum4</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>11</RowIndex>
+          <ParameterName>stratum5</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>11</RowIndex>
+          <ParameterName>stratum6</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>11</RowIndex>
+          <ParameterName>stratum7</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>11</RowIndex>
+          <ParameterName>stratum8</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>12</RowIndex>
+          <ParameterName>stratum9</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>12</RowIndex>
+          <ParameterName>stratum10</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>12</RowIndex>
+          <ParameterName>stratum11</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>12</RowIndex>
+          <ParameterName>stratum12</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>13</RowIndex>
+          <ParameterName>exclusion</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>tot_stratum1</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>tot_stratum2</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>tot_stratum3</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>7</RowIndex>
+          <ParameterName>tot_stratum4</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>8</RowIndex>
+          <ParameterName>tot_stratum5</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>8</RowIndex>
+          <ParameterName>tot_stratum6</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>8</RowIndex>
+          <ParameterName>tot_stratum7</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>8</RowIndex>
+          <ParameterName>tot_stratum8</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>9</RowIndex>
+          <ParameterName>tot_stratum9</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>9</RowIndex>
+          <ParameterName>tot_stratum10</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>9</RowIndex>
+          <ParameterName>tot_stratum11</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>9</RowIndex>
+          <ParameterName>tot_stratum12</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>6</RowIndex>
+          <ParameterName>record_count_after_exclusion</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>2</ColumnIndex>
+          <RowIndex>13</RowIndex>
+          <ParameterName>total_from_all_stratum</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
+    </GridLayoutDefinition>
+  </ReportParametersLayout>
+  <Language>en-US</Language>
+  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>265f7f00-1574-4f94-8739-7d5d5c01e993</rd:ReportID>
+</Report>
